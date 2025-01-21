@@ -1,2 +1,3 @@
 trying the Cherry Pick in Git
 checking stash while new_file_5 is modified and Hello I am under the water
+checking stash while new_file_5 is modified and kept in stash and now for conflict checking
