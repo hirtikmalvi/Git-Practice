@@ -1,0 +1,1 @@
+This is the content in new_file_5.txt for checking the cherry pick.
