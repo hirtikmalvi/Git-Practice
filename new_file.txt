@@ -1,2 +1,2 @@
-This is John Cena
-This is Second Line in new_file in main branch
+Hello This is Hirtik Malvi
+I be adding some new content in the new file inside main branch for checking out the working of merge conflict
