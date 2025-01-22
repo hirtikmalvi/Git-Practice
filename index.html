@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hirtik's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header id="page-header">
+      <h1>Hirtik Malvi</h1>
+      <nav id="nav-bar">
+        <a href="#about-section">About</a>
+        <a href="#projects-section">Projects</a>
+        <a href="#contact-section">Contact</a>
+      </nav>
+    </header>
+    <main id="main-content">
+      <!-- About Me: A short introduction about yourself (name, profession, skills). -->
+      <section id="about-section">
+        <p>Hey There, I'm <span>Hirtik Malvi</span></p>
+        <p>
+          Trainee Software Engineer in .NET | Final Year Computer Engineering
+          Student
+        </p>
+      </section>
+      <!-- Projects Gallery: Showcase your best projects with images and descriptions. -->
+      <section id="projects-section">
+        <h2>Projects Gallery</h2>
+        <div id="project-container">
+          <div class="project-content">
+            <p class="project-name">An eCommerce</p>
+            <div class="project-features">
+              <p>Features</p>
+              <ul>
+                <li>
+                  Built an eCommerce web application with product listings,
+                  filters and shoppping cart functionality.
+                </li>
+                <li>
+                  Integrated sign-in/sign-up with JWT for user authentication
+                  and managed user sessions.
+                </li>
+                <li>
+                  Implemented product filtering based on category, price and
+                  brand. Provided a seamless checkout process with order
+                  creation and shipping management.
+                </li>
+              </ul>
+            </div>
+            <div class="project-screenshots">
+              <p>Screenshots</p>
+              <div class="project-screenshot-container">
+                <img
+                  src="./images/ecommerce-project/ecommerce Project Demo Hirtik Malvi_Moment.jpg"
+                  alt="Image Not Available"
+                  title="Home Page"
+                  aria-label="Home Page"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <p class="project-name">BlogiFy</p>
+            <div class="project-features">
+              <p>Features</p>
+              <ul>
+                <li>
+                  Developed BlogiFy using Express.js with MVC architecture, a
+                  web application for posting blogs.
+                </li>
+                <li>
+                  Provided sign-in/sign-up functionality with JWT for session
+                  management and user authentication for secure access
+                  management.
+                </li>
+                <li>
+                  Provided user with functionalities like Creating and posting a
+                  blog, Delete own blogs, View blogs, Comments.
+                </li>
+              </ul>
+            </div>
+            <div class="project-screenshots">
+              <p>Screenshots</p>
+              <div class="project-screenshot-container">
+                No Screenshots Available
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Form: A form with fields like Name, Email, Message, and a Submit button. -->
+      <section id="contact-section">
+        <h2>Contact Me</h2>
+        <form action="submit" id="contact-form">
+          <label for="your-name">Name: </label>
+          <input
+            type="text"
+            id="your-name"
+            placeholder="Your Name"
+            name="your-name"
+            title="Your Name"
+            aria-label="Your Name"
+          />
+          <label for="your-email">Email: </label>
+          <input
+            type="email"
+            id="your-email"
+            placeholder="Your Email"
+            title="Your Email"
+            name="my-email"
+            aria-label="Your Email"
+          />
+          <label for="your-message">Message: </label>
+          <textarea
+            name="your-message"
+            id="your-message"
+            placeholder="Enter Your Thoughts!"
+            title="Enter Your Thoughts!"
+          >
+          </textarea>
+          <input type="submit" title="Submit" id="submit-btn" />
+        </form>
+      </section>
+    </main>
+    <footer id="page-footer">
+      <section id="social-media-container">
+        <h2>My Socials</h2>
+        <div id="social-media-links-container">
+          <a href="#" target="_blank">Linkdin</a>
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">X (Twitter)</a>
+        </div>
+      </section>
+      <section id="copyright-section">
+        <p>&copy; 2025 Hirtik A Malvi</p>
+      </section>
+    </footer>
+  </body>
+</html>

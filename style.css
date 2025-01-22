@@ -1,0 +1,218 @@
+body {
+  background-color: #353a49;
+  background-repeat: no-repeat;
+  margin: auto;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 2px;
+  width: fit-content;
+} /* Body styling */
+
+#page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: url(./images/ecommerce-project/banner-5456118_1280.png);
+  background-size: cover;
+  border: 5px solid white;
+} /* Header Section */
+
+#nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+} /* Navbar */
+
+#about-section {
+  border: 2px dashed black;
+  text-align: center;
+  height: 300px;
+  line-height: 50px;
+  display: block;
+  background-image: linear-gradient(to right, #cc8fa8, #1e316b);
+  align-content: center;
+} /* About section */
+
+#about-section p:first-child {
+  font-size: 50px;
+  margin: 0;
+} /* About section first paragraph */
+
+#about-section p:first-child span {
+  color: #ea0062;
+} /* About section first paragraph's span */
+
+#about-section p + p {
+  font-size: 20px;
+} /* About section second paragraph */
+
+a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+} /* Anchor tags */
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  color: #ea0062;
+} /* Anchor tag hover effects */
+
+#projects-section {
+  border: 2px dashed black;
+  display: block;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+} /* Projects Section */
+
+#project-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 100%;
+} /* Project Container */
+
+.project-content {
+  border: 2px solid white;
+  margin: 10px;
+  padding: 10px;
+  width: 45%;
+} /* Individual project content */
+
+.project-content p {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+} /* Project section paragraph styling */
+
+.project-features,
+.project-screenshots {
+  margin-left: 10px;
+} /* Project features and screenshots container */
+
+.project-features {
+  width: 95%;
+} /* Features list in project */
+
+.project-features li {
+  line-height: 25px;
+} /* Feature list items */
+
+.project-screenshot-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 20px;
+} /* Image container inside the project section */
+
+.project-screenshots img {
+  height: auto;
+  max-width: 500px;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #77a1a8;
+  display: inline-block;
+} /* Images of the projects */
+
+#contact-section {
+  display: block;
+  border: 2px dashed black;
+  padding-left: 20px;
+  padding-right: 20px;
+} /* Contact Section */
+
+input,
+textarea {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  margin-bottom: 10px;
+} /* Contact form inputs */
+
+#submit-btn {
+  box-sizing: content-box;
+  width: 50px;
+} /* Submit button */
+
+#contact-form {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+} /* Contact form container */
+
+footer {
+  padding: 0 20px 20px 20px;
+} /* Footer Section */
+
+#social-media-links-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 15px;
+} /* Footer social media links */
+
+#copyright-section {
+  text-align: center;
+} /* Copyright Section */
+
+/* Media Query for screen-sise < 768px */
+@media only screen and (max-width: 768px) {
+  /* page header */
+  #page-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-size: smaller;
+  }
+
+  /* nav bar */
+  #nav-bar {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+  }
+  a {
+    font-size: smaller;
+  }
+  #about-section p:first-child {
+    font-size: 30px;
+    margin: 0;
+  } /* About section first paragraph */
+
+  #about-section p:first-child span {
+    color: #ea0062;
+  } /* About section first paragraph's span */
+
+  #about-section p + p {
+    font-size: 15px;
+    line-height: 20px;
+  } /* About section second paragraph */
+
+  .project-content {
+    width: 100%;
+  } /* Individual project content */
+
+  .project-features {
+    width: 95%;
+  } /* Features list in project */
+
+  .project-screenshots img {
+    width: 95%;
+  } /* Images of the projects */
+
+  #contact-form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+  }
+}
