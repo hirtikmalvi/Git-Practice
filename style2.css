@@ -1,0 +1,60 @@
+body {
+  height: 100vh;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  background-color: chartreuse;
+  margin-top: 50px;
+  position: sticky;
+  top: 0;
+}
+main {
+  background-color: blueviolet;
+  width: 70%;
+  height: 400px;
+  margin-top: 10px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+#blog-text-container {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+aside {
+  background-color: aqua;
+  width: 30%;
+  height: 400px;
+  margin-top: 10px;
+  float: right;
+  overflow: auto;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.post-list-text-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+}
+aside ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.post-list-text-container h5 {
+  margin: 0;
+}
+
+.post-list-text-container p {
+  margin: 5px;
+}
