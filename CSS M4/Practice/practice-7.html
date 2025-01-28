@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice 7</title>
+    <style>
+      body {
+        height: 100vh;
+      }
+      header {
+        height: 50px;
+        background-color: chartreuse;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      nav ul {
+        display: flex;
+        gap: 60px;
+      }
+      nav ul li {
+        display: inline-block;
+      }
+      @media (max-width: 768px) {
+        header {
+          height: 100px;
+          padding: 10px;
+          box-sizing: border-box;
+        }
+        header h2 {
+          font-size: 16px;
+          margin: 0;
+        }
+        nav ul {
+          height: 100%;
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+        }
+        nav ul li {
+          display: inline-block;
+          font-size: 15px;
+        }
+        nav ul li a {
+          font-size: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create a horizontal navigation bar with links using plain HTML and CSS. Use CSS media queries to make the navigation bar responsive. On screens larger than 768px, the links should be displayed in a row. On smaller screens, the links should stack vertically. Ensure proper use of flexbox or grid to achieve this. -->
+    <header>
+      <h2>Navbar</h2>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact US</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>
