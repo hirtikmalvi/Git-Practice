@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <style>
+      body {
+        width: 60%;
+        border: 1px solid black;
+        margin: 5px auto;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+      table,
+      th,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+      }
+      th {
+        color: rgb(81 94 218);
+      }
+      #selleraddress-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      #notes-total-Container {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        height: 80px;
+      }
+      #notes {
+        box-sizing: border-box;
+        width: 50%;
+        height: 100px;
+        background-color: rgb(233 232 255);
+      }
+      #total {
+        text-align: end;
+        padding: 10px;
+        box-sizing: border-box;
+        width: 50%;
+        height: 100px;
+        background-color: rgb(81 94 218);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="displaydata">
+      <div id="selleraddress-container">
+        <h1>Invoice</h1>
+        <div id="selleraddress">
+          
+        </div>
+      </div>
+      <div id="billto"></div>
+      <div id="invoice-details"></div>
+      <table id="items-table">
+        <caption></caption>
+        <thead>
+          <tr>
+            <th>ITEMS</th>
+            <th>DESCRIPTION</th>
+            <th>QUANTITY</th>
+            <th>PRICE</th>
+            <th>TAX</th>
+            <th>AMOUNT</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div id="notes-total-Container">
+        <div id="notes">
+          <p>NOTES:</p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
+          </p>
+        </div>
+        <div id="total">
+          <p>TOTAL</p>
+          <strong style="font-size: 30px">$6666</strong>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      sampleJson = [
+        {
+          SellerDetails: {
+            SellerName: "Ravi Gupta",
+            SellerAddress: "Surdhara Complex, Naranpura",
+            City: "Ahmedabad",
+            State: "Gujarat",
+            Zip: 382481,
+            Phone: 8989898989,
+            Email: "seller@gmail.com",
+          },
+
+          BuyerDetails: {
+            CompanyName: "Radixweb",
+            Name: "Nitish Patel",
+            Address:
+              "B/H Nirma University, Ekyarth, Near Vandemataram Fabula, Malabar County Rd",
+            City: "Ahmedabad",
+            State: "Gujarat",
+            Zip: 382481,
+            Phone: 98989898,
+            Email: "buyer@gmail.com",
+          },
+
+          ItemDetails: [
+            {
+              ItemName: " Item1",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$100",
+              Tax: "10%",
+              Amount: "$110",
+            },
+            {
+              ItemName: " Item2",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$200",
+              Tax: " 20%",
+              Amount: "$240",
+            },
+
+            {
+              ItemName: "Item3",
+              Description: "Description",
+              Quntity: 3,
+              Price: "$300",
+              Tax: "10%",
+              Amount: "$990",
+            },
+
+            {
+              ItemName: " Item4",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$400",
+              Tax: "10%",
+              Amount: "$440",
+            },
+
+            {
+              ItemName: " Item5",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$500",
+              Tax: "10%",
+              Amount: "$550",
+            },
+
+            {
+              ItemName: " Item6",
+              Description: "Description",
+              Quntity: 2,
+              Price: "$600",
+              Tax: "10%",
+              Amount: "$1320",
+            },
+
+            {
+              ItemName: " Item7",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$700",
+              Tax: "10%",
+              Amount: "$770",
+            },
+
+            {
+              ItemName: " Item8",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$800",
+              Tax: "10%",
+              Amount: "$880",
+            },
+
+            {
+              ItemName: " Item9",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$900",
+              Tax: "15%",
+              Amount: "$1035",
+            },
+
+            {
+              ItemName: " Item10",
+              Description: "Description",
+              Quntity: 1,
+              Price: "$450",
+              Tax: "10%",
+              Amount: "$495",
+            },
+          ],
+        },
+      ];
+
+      let addSellerDetails = (details) => {
+        console.log(details);
+        let sellerDetailsContent = "";
+
+        sellerDetailsContent += `
+            <p><strong>Seller Address:</strong> ${details.SellerAddress}</p>
+            <p><strong>City, State, Zip:</strong>${details.City},${details.State},${details.Zip}</p>
+            <p><strong>Phone: </strong>${details.Phone}</p>
+            <p><strong>Email: </strong>${details.Email}</p>
+            <p><strong>SellerName </strong>${details.SellerName}</p>
+        `;
+
+        document.getElementById("selleraddress").innerHTML =
+          sellerDetailsContent;
+      };
+
+      let addBillingDetails = (details) => {
+        let buyerDetailsContent = "";
+
+        buyerDetailsContent += `
+            <p><strong>Company Name: ${details.CompanyName}</strong></p>
+            <p><strong>Name: ${details.Name} </strong></p>
+            <p><strong>Address: </strong> ${details.Address}</p>
+            <p><strong>City, State, Zip: </strong>${details.City},${details.State},${details.Zip}</p>
+            <p><strong>Phone: </strong>${details.Phone}</p>
+            <p><strong>Email: </strong>${details.Email}</p>
+        `;
+
+        document.getElementById("billto").innerHTML = buyerDetailsContent;
+      };
+
+      let addItems = (items) => {
+        let itemRows = "";
+        for (let [index, item] of items.entries()) {
+          itemRows += `
+          <tr id=${item.ItemName}-${index}>
+            <td>${item.ItemName}</td>
+            <td>${item.Description}</td>
+            <td>${item.Quntity}</td>
+            <td>${item.Price}</td>
+            <td>${item.Tax}</td>
+            <td>$${
+              parseInt(item.Price.split("$")[1]) +
+              parseInt(item.Price.split("$")[1]) *
+                (parseInt(item.Tax.split("%")[0]) / 100)
+            }</td>
+          </tr>
+          `;
+        }
+        document.querySelector("#items-table tbody").innerHTML = itemRows;
+      };
+
+      let total = sampleJson[0].ItemDetails.reduce((sum, currVal) => {
+        return (
+          sum +
+          parseInt(currVal.Price.split("$")[1]) +
+          parseInt(currVal.Price.split("$")[1]) *
+            (parseInt(currVal.Tax.split("%")[0]) / 100)
+        );
+      }, 0);
+
+      addSellerDetails(sampleJson[0].SellerDetails);
+
+      addBillingDetails(sampleJson[0].BuyerDetails);
+
+      document.getElementById("invoice-details").innerHTML = "";
+
+      addItems(sampleJson[0].ItemDetails);
+
+      document.querySelector("#total strong").innerHTML =
+        "$" + total.toFixed(2);
+    </script>
+  </body>
+</html>

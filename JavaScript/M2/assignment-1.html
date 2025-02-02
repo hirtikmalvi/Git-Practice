@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1</title>
+  </head>
+  <body>
+    <label id="date-label">Enter Date: </label>
+    <input type="text" id="date" placeholder="MM-DD-YYYY" />
+    <button id="check-btn">Check</button>
+    <div id="error" style="color: red"></div>
+    <div id="validresult" style="color: green"></div>
+    <script>
+      let dateInputBox = document.getElementById("date");
+
+      let errorBox = document.getElementById("error");
+
+      let validResult = document.getElementById("validresult");
+
+      let checkBtn = document.getElementById("check-btn");
+
+      let isDateInValidMMDDYYYYFormat = (month, date, year) => {
+        return month.length === 2 && date.length === 2 && year.length === 4;
+      };
+
+      let isDateValid = (month, date, year) => {
+        const totalDaysInMonth = new Date(year, month, 0).getDate();
+        return date > 0 && date <= totalDaysInMonth;
+      };
+
+      let isMonthValid = (month) => {
+        return month.length === 2 && month >= 1 && month <= 12;
+      };
+
+      checkBtn.addEventListener("click", () => {
+        let enteredDate = dateInputBox.value;
+
+        let month = enteredDate.split("-")[0];
+        let date = enteredDate.split("-")[1];
+        let year = enteredDate.split("-")[2];
+
+        if (enteredDate === "" || isNaN(month) || isNaN(date) || isNaN(year)) {
+          errorBox.innerText = "Please enter date in MM-DD-YYYY format";
+          validResult.innerText = "";
+        } else if (!isDateInValidMMDDYYYYFormat(month, date, year)) {
+          errorBox.innerText =
+            "Invalid date. Please enter date in MM-DD-YYYY format";
+          validResult.innerText = "";
+        } else if (!isMonthValid(month)) {
+          errorBox.innerText =
+            "Invalid month. Month should be within the range 1 to 12";
+          validResult.innerText = "";
+        } else if (!isDateValid(month, date, year)) {
+          errorBox.innerText = `Invalid day. Day should be within the range ${1} to ${new Date(
+            year,
+            month,
+            0
+          ).getDate()}`;
+          validResult.innerText = "";
+        } else {
+          errorBox.innerText = "";
+          validResult.innerText = `You have entered valid date. Its "${date}-${month}-${year}". Thank you`;
+        }
+      });
+    </script>
+  </body>
+</html>
