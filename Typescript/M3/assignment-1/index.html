@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1</title>
+    <style>
+      table,
+      th,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="vacancy">
+      <h2>Add Vacancy</h2>
+      <input type="number" id="vacancyid" placeholder="Vacancy ID" /><br />
+      <input type="text" id="vacancytitle" placeholder="Vacancy Title" /><br />
+      <input
+        type="text"
+        id="vacancydescription"
+        placeholder="Vacancy Description"
+      />
+      <br />
+      <input
+        type="text"
+        id="vacancyskillrequired"
+        placeholder="Skills Required"
+      />
+      <br />
+      <button id="addVacancy">Add Vacancy</button>
+    </div>
+
+    <table id="vacanciesTable">
+      <caption>
+        <h3>Available Vacancies</h3>
+      </caption>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Skills Required</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div id="applicant">
+      <h2>Add Applicant</h2>
+      <input type="number" id="applicantid" placeholder="Applicant ID" /> <br />
+      <input type="text" id="applicantname" placeholder="Applicant Name" />
+      <br />
+      <input type="text" id="applicantemail" placeholder="Applicant Email" />
+      <br />
+      <input type="text" id="applicantphone" placeholder="Applicant Phone" />
+      <br />
+      <input type="text" id="applicantresume" placeholder="Resume Link" />
+      <br />
+      <button id="addApplicant">Add Applicant</button>
+    </div>
+
+    <table id="applicantsTable">
+      <caption>
+        <h3>Applicants</h3>
+      </caption>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Resume</th>
+          <th>Applicant Status</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div id="apply">
+      <h3>Apply For Vacancy</h3>
+      <input type="number" id="vacancyApply" placeholder="Enter Vacancy Id" />
+      <br />
+      <input
+        type="number"
+        id="applicantApply"
+        placeholder="Enter Applicant Id"
+      />
+      <br />
+      <label for="interviewDate">Select Interview Date</label>
+      <input type="date" id="interviewDate" />
+      <br />
+      <button id="applyForVacancyBtn">Apply</button>
+    </div>
+
+    <table id="interviewsTable">
+      <caption>
+        <h3>Interviews</h3>
+      </caption>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Applicant Id</th>
+          <th>Vacacncy Id</th>
+          <th>Date</th>
+          <th>Change Status</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
