@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Management System</title>
+    <style>
+      #updateEmployeeButton {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="employeeName" placeholder="Employee Name" />
+    <span id="nameError"></span>
+    <br />
+
+    <input type="text" id="employeeId" placeholder="Employee Id" />
+    <span id="idError"></span>
+    <br />
+
+    <select id="employeeDepartment">
+      <option value="Select a department">Select a department</option>
+      <option value="Engineering">Engineering</option>
+      <option value="HR">HR</option>
+      <option value="Sales">Sales</option>
+    </select>
+    <span id="departmentError"></span>
+    <br />
+
+    <input type="number" id="employeeSalary" placeholder="Employee Salary" />
+    <span id="salaryError"></span>
+    <br />
+
+    <button id="addEmployeeButton">Add</button>
+    <button id="updateEmployeeButton">Update</button>
+
+    <table id="employeeTable">
+      <caption>
+        <h3>Employee List</h3>
+      </caption>
+
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Department</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

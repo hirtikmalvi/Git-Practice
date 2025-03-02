@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recruitment Management System</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .section {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+      button {
+        margin: 5px;
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loginSection">
+      <h2>Login</h2>
+      <select id="roleSelect">
+        <option value="hr">HR</option>
+        <option value="applicant">Applicant</option>
+      </select>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <!-- HR Section -->
+    <div id="hrSection" class="section hidden">
+      <h2>HR Dashboard</h2>
+      <div>
+        <h3>Create Vacancy</h3>
+        <input type="text" id="jobTitle" placeholder="Job Title" />
+        <input type="text" id="jobDescription" placeholder="Job Description" />
+        <button onclick="createVacancy()">Create Vacancy</button>
+      </div>
+
+      <div>
+        <h3>Vacancies</h3>
+        <div id="vacanciesList"></div>
+      </div>
+
+      <div>
+        <h3>Applications</h3>
+        <div id="applicationsList"></div>
+      </div>
+
+      <div>
+        <h3>Schedule Interview</h3>
+        <div id="scheduleInterviewSection"></div>
+      </div>
+
+      <div>
+        <h3>Interview Results</h3>
+        <div id="interviewResultsList"></div>
+      </div>
+
+      <div>
+        <h3>Reports</h3>
+        <button onclick="generateReport()">Generate Report</button>
+        <div id="reportsSection"></div>
+      </div>
+    </div>
+
+    <!-- Applicant Section -->
+    <div id="applicantSection" class="section hidden">
+      <h2>Applicant Dashboard</h2>
+      <div>
+        <h3>Available Positions</h3>
+        <div id="availablePositions"></div>
+      </div>
+
+      <div>
+        <h3>Apply for Position</h3>
+        <input type="text" id="applicantName" placeholder="Your Name" />
+        <input type="email" id="applicantEmail" placeholder="Your Email" />
+        <textarea
+          id="applicantResume"
+          placeholder="Paste your resume"
+        ></textarea>
+        <button onclick="submitApplication()">Submit Application</button>
+      </div>
+
+      <div>
+        <h3>Your Applications</h3>
+        <div id="yourApplications"></div>
+      </div>
+    </div>
+
+    <script src="./src/main.ts"></script>
+  </body>
+</html>
